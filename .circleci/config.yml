@@ -2,14 +2,14 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.2
 
-  
+
 jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
     working_directory: ~/rails-docker/src
     steps:
-      - checkout
+      - checkout:
           path: ~/rails-docker
       - ruby/install-deps
   tests:
